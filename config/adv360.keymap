@@ -34,7 +34,7 @@
     combos {
         compatible = "zmk,combos";
 
-        QW_ESC {
+        ER_ESC {
             bindings = <&kp ESCAPE>;
             key-positions = <17 18>;
             layers = <0>;
