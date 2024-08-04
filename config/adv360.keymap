@@ -30,20 +30,11 @@
             bindings = <&kp>, <&kp>;
 
             quick-tap-ms = <175>;
+            hold-trigger-key-positions = <29 30 31 32 41 42 43 44>;
         };
     };
 
-    combos {
-        compatible = "zmk,combos";
-
-        ER_ESC {
-            bindings = <&kp ESCAPE>;
-            key-positions = <17 18>;
-            layers = <0>;
-            require-prior-idle-ms = <200>;
-            slow-release;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     keymap {
         compatible = "zmk,keymap";
