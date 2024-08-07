@@ -78,14 +78,14 @@
     };
 
     // Home row mods
-    #define _F_SFT &hm_l LSHFT F  // Shift on index fingers
-    #define _J_SFT &hm_r RSHFT J
-    #define _D_CTRL &hm_l LCTRL D   // CTRL on middle fingers
-    #define _K_CTRL &hm_r RCTRL K
-    #define _S_ALT &hm_l LALT S  // ALT on index down
-    #define _L_ALT &hm_r RALT L
-    #define _A_WIN &hm_l LWIN A   // WIN/GUI on ring finger
-    #define _SEMI_WIN &hm_r RWIN SEMIC
+    #define _F_SFT   &hm_l LSHFT F  // Shift on index fingers
+    #define _J_SFT   &hm_r RSHFT J
+    #define _D_CTRL  &hm_l LCTRL D   // CTRL on middle fingers
+    #define _K_CTRL  &hm_r RCTRL K
+    #define _S_ALT   &hm_l LALT S  // ALT on index down
+    #define _L_ALT   &hm_r RALT L
+    #define _A_WIN   &hm_l LWIN A   // WIN/GUI on ring finger
+    #define _SEMI_WIN &hm_r RWIN SEMI
 
     combos { compatible = "zmk,combos"; };
 
