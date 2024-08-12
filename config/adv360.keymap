@@ -44,9 +44,9 @@
         #include "version.dtsi"
 
 
-        hm_shift_l: homerow_mods_shift {
+        hm_shift_l: homerow_mods_shift_l {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_SHIFT";
+            label = "HOMEROW_MODS_SHIFT_L";
             #binding-cells = <2>;
             tapping-term-ms = <150>;
             quick-tap-ms = <125>;
@@ -56,9 +56,9 @@
             hold-trigger-key-positions = <KEYS_RIGHT THUMBS>;
         };
         
-        hm_ctrl_l: homerow_mods_ctrl {
+        hm_ctrl_l: homerow_mods_ctrl_l {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_CTRL";
+            label = "HOMEROW_MODS_CTRL_L";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
@@ -68,9 +68,9 @@
             hold-trigger-key-positions = <KEYS_RIGHT THUMBS>;
         };
 
-        hm_alt_l: homerow_mods_ctrl {
+        hm_alt_l: homerow_mods_alt_l {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_CTRL";
+            label = "HOMEROW_MODS_ALT_L";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
@@ -80,9 +80,9 @@
             hold-trigger-key-positions = <KEYS_RIGHT THUMBS>;
         };
 
-        hm_win_l: homerow_mods_win {
+        hm_win_l: homerow_mods_win_l {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_WIN";
+            label = "HOMEROW_MODS_WIN_L";
             #binding-cells = <2>;
             tapping-term-ms = <200>;  // Höher als für andere Mods
             flavor = "tap-preferred";
@@ -91,9 +91,9 @@
             hold-trigger-key-positions = <KEYS_RIGHT THUMBS>;
         };
 
-        hm_shift_r: homerow_mods_shift {
+        hm_shift_r: homerow_mods_shift_r {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_SHIFT";
+            label = "HOMEROW_MODS_SHIFT_R";
             #binding-cells = <2>;
             tapping-term-ms = <150>;
             quick-tap-ms = <125>;
@@ -103,9 +103,9 @@
             hold-trigger-key-positions = <KEYS_LEFT THUMBS>;
         };
         
-        hm_ctrl_r: homerow_mods_ctrl {
+        hm_ctrl_r: homerow_mods_ctrl_r {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_CTRL";
+            label = "HOMEROW_MODS_CTRL_R";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
@@ -115,9 +115,9 @@
             hold-trigger-key-positions = <KEYS_LEFT THUMBS>;
         };
 
-        hm_alt_r: homerow_mods_ctrl {
+        hm_alt_r: homerow_mods_alt_r {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_CTRL";
+            label = "HOMEROW_MODS_ALT_R";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
@@ -127,9 +127,9 @@
             hold-trigger-key-positions = <KEYS_LEFT THUMBS>;
         };
 
-        hm_win_r: homerow_mods_win {
+        hm_win_r: homerow_mods_win_r {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_WIN";
+            label = "HOMEROW_MODS_WIN_R";
             #binding-cells = <2>;
             tapping-term-ms = <200>;  // Höher als für andere Mods
             flavor = "tap-preferred";
