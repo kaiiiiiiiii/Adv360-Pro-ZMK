@@ -41,53 +41,113 @@
 / {
     behaviors {
         #include "macros.dtsi"
-    #include "version.dtsi"
+        #include "version.dtsi"
 
-        hm: homerow_mods {
+
+        hm_shift_l: homerow_mods_shift {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
+            label = "HOMEROW_MODS_SHIFT";
             #binding-cells = <2>;
             tapping-term-ms = <150>;
-            quick_tap_ms = <125>;
-            require-prior-idle-ms = <150>;
-            flavor = "tap-preferred";
+            quick-tap-ms = <125>;
+            flavor = "tap-preffered";
             bindings = <&kp>, <&kp>;
-        };
-    
-        hm_l: homerow_mods_left {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_LEFT";
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            quick_tap_ms = <125>;
             require-prior-idle-ms = <150>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_RIGHT THUMBS>;
         };
-    
-        hm_r: homerow_mods_right {
+        
+        hm_ctrl_l: homerow_mods_ctrl {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_RIGHT";
+            label = "HOMEROW_MODS_CTRL";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            quick_tap_ms = <125>;
-            require-prior-idle-ms = <150>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
+            require-prior-idle-ms = <250>;
+            hold-trigger-key-positions = <KEYS_RIGHT THUMBS>;
+        };
+
+        hm_alt_l: homerow_mods_ctrl {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_CTRL";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+            require-prior-idle-ms = <250>;
+            hold-trigger-key-positions = <KEYS_RIGHT THUMBS>;
+        };
+
+        hm_win_l: homerow_mods_win {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_WIN";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;  // Höher als für andere Mods
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+            require-prior-idle-ms = <500>;
+            hold-trigger-key-positions = <KEYS_RIGHT THUMBS>;
+        };
+
+        hm_shift_r: homerow_mods_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_SHIFT";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <125>;
+            flavor = "tap-preffered";
+            bindings = <&kp>, <&kp>;
+            require-prior-idle-ms = <150>;
+            hold-trigger-key-positions = <KEYS_LEFT THUMBS>;
+        };
+        
+        hm_ctrl_r: homerow_mods_ctrl {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_CTRL";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+            require-prior-idle-ms = <250>;
+            hold-trigger-key-positions = <KEYS_LEFT THUMBS>;
+        };
+
+        hm_alt_r: homerow_mods_ctrl {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_CTRL";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+            require-prior-idle-ms = <250>;
+            hold-trigger-key-positions = <KEYS_LEFT THUMBS>;
+        };
+
+        hm_win_r: homerow_mods_win {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_WIN";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;  // Höher als für andere Mods
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+            require-prior-idle-ms = <500>;
             hold-trigger-key-positions = <KEYS_LEFT THUMBS>;
         };
     };
 
     // Home row mods
-    #define _F_SFT   &hm_l LSHFT F  // Shift on index fingers
-    #define _J_SFT   &hm_r RSHFT J
-    #define _D_CTRL  &hm_l LCTRL D   // CTRL on middle fingers
-    #define _K_CTRL  &hm_r RCTRL K
-    #define _S_ALT   &hm_l LALT S  // ALT on index down
-    #define _L_ALT   &hm_r RALT L
-    #define _A_WIN   &hm_l LWIN A   // WIN/GUI on ring finger
-    #define _SEMI_WIN &hm_r RWIN SEMI
+    #define _F_SFT     &hm_shift_l   LSHFT   F  // Shift on index fingers
+    #define _J_SFT     &hm_shift_r   RSHFT   J
+    #define _D_CTRL    &hm_ctrl_l    LCTRL   D   // CTRL on middle fingers
+    #define _K_CTRL    &hm_ctrl_r    RCTRL   K
+    #define _S_ALT     &hm_alt_l     LALT    S  // ALT on index down
+    #define _L_ALT     &hm_alt_r     RALT    L
+    #define _A_WIN     &hm_win_l     LWIN    A   // WIN/GUI on ring finger
+    #define _SEMI_WIN  &hm_win_r     RWIN    SEMI
 
     combos { compatible = "zmk,combos"; };
 
