@@ -74,9 +74,8 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             bindings = <&kp>, <&kp>;
-            require-prior-idle-ms = <250>;
             hold-trigger-key-positions = <KEYS_RIGHT THUMBS>;
         };
 
@@ -84,10 +83,10 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS_WIN_L";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;  // Höher als für andere Mods
+            tapping-term-ms = <200>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
-            require-prior-idle-ms = <500>;
+            require-prior-idle-ms = <1000>;
             hold-trigger-key-positions = <KEYS_RIGHT THUMBS>;
         };
 
@@ -121,9 +120,8 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             bindings = <&kp>, <&kp>;
-            require-prior-idle-ms = <250>;
             hold-trigger-key-positions = <KEYS_LEFT THUMBS>;
         };
 
@@ -131,10 +129,10 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS_WIN_R";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;  // Höher als für andere Mods
+            tapping-term-ms = <200>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
-            require-prior-idle-ms = <500>;
+            require-prior-idle-ms = <1000>;
             hold-trigger-key-positions = <KEYS_LEFT THUMBS>;
         };
     };
@@ -149,7 +147,24 @@
     #define _A_WIN     &hm_win_l     LWIN    A   // WIN/GUI on ring finger
     #define _SEMI_WIN  &hm_win_r     RWIN    SEMI
 
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+        combo_ae {
+            timeout-ms = <50>;
+            key-positions = <30 28>;
+            bindings = <&kp RALT(A)>;
+        };
+        combo_ue {
+            timeout-ms = <50>;
+            key-positions = <23 28>;
+            bindings = <&kp LALT(U)>;
+        };
+        combo_oe {
+            timeout-ms = <50>;
+            key-positions = <24 28>;
+            bindings = <&kp LALT(O)>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
