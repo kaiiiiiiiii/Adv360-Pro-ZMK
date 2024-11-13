@@ -15,11 +15,11 @@ jobs:
   draw:
     uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
     with:
-      keymap_patterns: 'config/*.keymap'
+      keymap_patterns: '/config/*.keymap'
       config_path: keymap-drawer/config.yaml
       output_folder: keymap-drawer
       install_branch: main
       amend_commit: true
       draw_args: "adv360pro:'-k adv360pro'"
       json_path: keymap-drawer/layouts
-      west_config_path: './config/'
+      west_config_path: 'config'
