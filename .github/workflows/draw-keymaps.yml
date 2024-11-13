@@ -1,25 +1,25 @@
-name: Draw ZMK Keymap
-
+# Draw keymap diagrams using keymap-drawer ZMK user config workflow
+name: Draw ZMK keymaps
 on:
-  push:
-    paths:
-      - 'config/*.keymap'
   workflow_dispatch:
+    push:
+      paths:
+        - 'config/*.keymap'
+        - 'config/**/*.keymap'
+        - 'config/*.dtsi'
+        - 'config/includes/*.dtsi'
+        - keymap-drawer/config.yaml
+        - .github/workflows/draw-keymaps.yml
 
 jobs:
   draw:
-    runs-on: ubuntu-latest
-    name: Draw keymap
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-      - name: Install keymap drawer
-        run: pip install -U keymap-drawer
-      - name: Generate keymap
-        run: keymap -c config/adv360.keymap -o keymap.svg
-      - uses: actions/upload-artifact@v3
-        with:
-          name: keymap
-          path: keymap.svg
+    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
+    with:
+      keymap_patterns: 'config/*.keymap'
+      config_path: keymap-drawer/config.yaml
+      output_folder: keymap-drawer
+      install_branch: main
+      amend_commit: true
+      draw_args: "adv360pro:'-k adv360pro'"
+      json_path: keymap-drawer/layouts
+      west_config_path: './config/'
