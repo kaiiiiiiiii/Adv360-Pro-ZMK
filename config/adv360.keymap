@@ -27,9 +27,8 @@
                    60 61 62 63 64 65 \
                    77 78 79 80 81
 
-#define THUMBS_L    35 36 54 71 72 73
-#define THUMBS_R    37 38 57 74 75 76
-#define THUMBS THUMBS_L THUMBS_R
+#define THUMBS      35 36 54 71 72 73 \
+                    37 38 57 74 75 76
 
 /* Global settings */
 #define QUICK_TAP_MS 175
