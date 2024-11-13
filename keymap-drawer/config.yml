@@ -1,0 +1,9 @@
+parse_config:
+  zmk_preamble: "#include <zmk-helpers/key-labels/adv360_custom.h>"
+  zmk_additional_includes:
+    - "modules/helpers/include"
+    - "zmk-helpers/include"
+
+draw_config:
+  footer_text: "kaiiiiiiiii/adv360pro-zmk-config"
+  dark_mode: auto
