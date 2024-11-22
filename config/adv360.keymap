@@ -91,7 +91,7 @@ ZMK_MACRO(dot_spc,
     bindings = <&kp DOT &kp SPACE &sk LSHFT>;
 )
 
-ZMK_HOLD_TAP(dot_morph, bindings = <&dot_spc>, <&kp DOT>; MT_CORE)
+ZMK_HOLD_TAP(dot_morph, bindings = <&dot_spc &kp DOT>; MT_CORE)
 
 #define NAV_LEFT    &mt_home 0   LEFT    // tap: left  | long-tap: beginning of line
 #define NAV_RIGHT   &mt_end 0    RIGHT   // tap: right | long-tap: end       of line
