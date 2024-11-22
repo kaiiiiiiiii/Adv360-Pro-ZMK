@@ -91,7 +91,7 @@ ZMK_MACRO(dot_spc,
     bindings = <&kp DOT &kp SPACE &sk LSHFT>;
 )
 
-ZMK_HOLD_TAP(dot_morph, bindings = <&dot_spc &kp DOT>; MT_CORE)
+ZMK_HOLD_TAP(mt_dot, bindings = <&dot_spc>, <&kp>; MT_CORE)
 
 #define NAV_LEFT    &mt_home 0   LEFT    // tap: left  | long-tap: beginning of line
 #define NAV_RIGHT   &mt_end 0    RIGHT   // tap: right | long-tap: end       of line
@@ -101,6 +101,8 @@ ZMK_HOLD_TAP(dot_morph, bindings = <&dot_spc &kp DOT>; MT_CORE)
 #define BSPC_MORPH  &mt LC(BSPC) BSPC    // tap: bspc  | long-tap: delete word backward
 #define DEL_MORPH   &mt LC(DEL)  DEL     // tap: del   | long-tap: delete word forward
 
+#define DOT_MORPH   &mt_dot 0    DOT     // tap: dot   | long-tap: press dot, space and shift at the same time
+
 ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS)  // FN + NUM --> SYS
 
 /* Keymap Default Layer */
@@ -108,7 +110,7 @@ ZMK_LAYER(default,
 &kp EQUAL  &kp N1          &kp N2          &kp N3       &kp N4            &kp N5  &tog 1                                                           &mo 3      &kp N6  &kp N7             &kp N8       &kp N9           &kp N0              &kp MINUS
 &kp TAB    &kp Q           &kp W           &kp E        &kp R             &kp T   XXX                                                            XXX      &kp Y   &kp U              &kp I        &kp O            &kp P               &kp BSLH
 &kp ESC    &hml LGUI A     &hml LALT S     &hml LCTRL D &hml LSHFT F      &kp G   XXX     XXX   XXX   XXX  XXX  XXX      &kp H   &hmr RSHFT J       &hmr LCTRL K &hmr LALT L      &hmr LGUI SEMI           &kp SQT
-&kp LSHFT  &kp Z           &kp X           &kp C        &kp V             &kp B                        XXX          XXX                            &kp N   &kp M              &kp COMMA    &dot_morph          &kp FSLH            &kp RSHFT
+&kp LSHFT  &kp Z           &kp X           &kp C        &kp V             &kp B                        XXX          XXX                            &kp N   &kp M              &kp COMMA    DOT_MORPH          &kp FSLH            &kp RSHFT
 &mo 2      &kp GRAVE       XXX        NAV_LEFT     NAV_RIGHT         BSPC_MORPH  DEL_MORPH    &kp END           XXX      &kp ENTER  &kp SPACE          NAV_UP             NAV_DOWN     &kp LBKT         &kp RBKT            &mo 2
 )
 
